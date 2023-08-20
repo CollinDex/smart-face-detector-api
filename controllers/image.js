@@ -1,3 +1,4 @@
+import fetch from 'node-fetch';
 
 // Setup Clarifai AI API Request
 const returnClarifaiJSONRequest = (imageUrl)=> {
