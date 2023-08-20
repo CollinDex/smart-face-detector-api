@@ -1,6 +1,6 @@
-
 const express = require('express'); 
 //const bcrypt = require('bcrypt-nodejs');
+import bodyParser from 'body-parser';
 const cors = require('cors');
 const knex = require('knex'); //Add kenx library to connect your backend with postgres
 const { user } = require('pg/lib/defaults');
