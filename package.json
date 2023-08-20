@@ -2,6 +2,7 @@
   "name": "smart-face-detector-api",
   "version": "1.0.0",
   "description": "Server for smart-brain-detector",
+  "type": "module",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,6 +15,7 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "knex": "^2.5.1",
+    "node-fetch": "^3.3.2",
     "pg": "^8.11.1"
   },
   "devDependencies": {

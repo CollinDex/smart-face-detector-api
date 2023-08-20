@@ -5,7 +5,8 @@ const knex = require('knex'); //Add kenx library to connect your backend with po
 const { user } = require('pg/lib/defaults');
 const bcrypt = require('bcrypt'); //Setup bcrypt
 const saltRounds = 10;
-const register = require('./controllers/register');
+//const register = require('./controllers/register');
+import handleRegister from './controllers/register.js';
 const signIn = require('./controllers/signIn');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image')
@@ -43,7 +44,7 @@ app.get('/', (req, res)=> {
 
 app.post('/signin', (req, res) => {signIn.handleSignIn(req, res, db, bcrypt, saltRounds)});
 
-app.post('/register', (req, res) => {register.handleRegister(req, res, db, bcrypt, saltRounds)});//Dependency Injection
+app.post('/register', (req, res) => {handleRegister(req, res, db, bcrypt, saltRounds)});//Dependency Injection
 
 app.get('/profile/:id', (req, res) => {profile.handleProfileGet(req, res, db)});
 
