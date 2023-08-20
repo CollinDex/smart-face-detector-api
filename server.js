@@ -10,7 +10,7 @@ import { handleRegister } from './controllers/register.js';
 import { handleSignIn } from './controllers/signIn.js';
 import { handleProfileGet } from './controllers/profile.js';
 import { handleImage, handleApiCall } from './controllers/image.js';
-import res from 'express/lib/response';
+import res from 'express/lib/response.js';
 
 /* 
 const express = require('express'); 
