@@ -5,11 +5,11 @@ import knex from 'knex'; //Add kenx library to connect your backend with postgre
 import { user } from 'pg/lib/defaults.js';
 import bcrypt from 'bcrypt'; //Setup bcrypt
 const saltRounds = 10;
-import { handleRegister } from './controllers/register';
+import { handleRegister } from './controllers/register.js';
 //import handleRegister from './controllers/register.js';
-import { handleSignIn } from './controllers/signIn';
-import { handleProfileGet } from './controllers/profile';
-import { handleImage, handleApiCall } from './controllers/image';
+import { handleSignIn } from './controllers/signIn.js';
+import { handleProfileGet } from './controllers/profile.js';
+import { handleImage, handleApiCall } from './controllers/image.js';
 import res from 'express/lib/response';
 
 /* 
