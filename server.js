@@ -36,7 +36,7 @@ const db = require('knex')({ //Initializing kenx library connection to db
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 //app.use(urlencoded({extended:false})); //These two lines calls up middleware that parses your json so your backend will understand it
-app.use(json());
+app.use(express.json());
 app.use(cors());
 
 
