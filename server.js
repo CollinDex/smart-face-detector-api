@@ -1,6 +1,8 @@
 import express, { urlencoded, json } from 'express'; 
 //const bcrypt = require('bcrypt-nodejs');
 import cors from 'cors';
+import knex from 'knex'; //Add kenx library to connect your backend with postgres
+import { user } from 'pg/lib/defaults';
 import bcrypt from 'bcrypt'; //Setup bcrypt
 const saltRounds = 10;
 import { handleRegister } from './controllers/register';
@@ -8,6 +10,7 @@ import { handleRegister } from './controllers/register';
 import { handleSignIn } from './controllers/signIn';
 import { handleProfileGet } from './controllers/profile';
 import { handleImage, handleApiCall } from './controllers/image';
+import res from 'express/lib/response';
 
 /* 
 const express = require('express'); 
