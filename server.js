@@ -1,6 +1,6 @@
 const express = require('express'); 
 //const bcrypt = require('bcrypt-nodejs');
-import bodyParser from 'body-parser';
+const bodyParser = require('body-parser');
 const cors = require('cors');
 const knex = require('knex'); //Add kenx library to connect your backend with postgres
 const { user } = require('pg/lib/defaults');
@@ -34,7 +34,7 @@ const db = require('knex')({ //Initializing kenx library connection to db
 });
  */
 const app = express();
-app.use(bodyParser, urlencoded({ extended: true }));
+app.use(bodyParser, urlencoded({ extended: false }));
 //app.use(urlencoded({extended:false})); //These two lines calls up middleware that parses your json so your backend will understand it
 app.use(json());
 app.use(cors());
