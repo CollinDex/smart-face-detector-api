@@ -1,18 +1,4 @@
-import express, { urlencoded, json } from 'express'; 
-//const bcrypt = require('bcrypt-nodejs');
-import cors from 'cors';
-import knex from 'knex'; //Add kenx library to connect your backend with postgres
-import { user } from 'pg/lib/defaults.js';
-import bcrypt from 'bcrypt'; //Setup bcrypt
-const saltRounds = 10;
-import { handleRegister } from './controllers/register.js';
-//import handleRegister from './controllers/register.js';
-import { handleSignIn } from './controllers/signIn.js';
-import { handleProfileGet } from './controllers/profile.js';
-import { handleImage, handleApiCall } from './controllers/image.js';
-import res from 'express/lib/response.js';
 
-/* 
 const express = require('express'); 
 //const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
@@ -26,7 +12,7 @@ const signIn = require('./controllers/signIn');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image')
 const res = require('express/lib/response');
-*/
+
 
 
 
@@ -58,15 +44,15 @@ app.get('/', (req, res)=> {
     res.send('sucess');
 });
 
-app.post('/signin', (req, res) => {handleSignIn(req, res, db, bcrypt, saltRounds)});
+app.post('/signin', (req, res) => {signIn.handleSignIn(req, res, db, bcrypt, saltRounds)});
 
-app.post('/register', (req, res) => {handleRegister(req, res, db, bcrypt, saltRounds)});//Dependency Injection
+app.post('/register', (req, res) => {register.handleRegister(req, res, db, bcrypt, saltRounds)});//Dependency Injection
 
-app.get('/profile/:id', (req, res) => {handleProfileGet(req, res, db)});
+app.get('/profile/:id', (req, res) => {profile.handleProfileGet(req, res, db)});
 
-app.put('/image', (req, res) => {handleImage(req, res, db)});
+app.put('/image', (req, res) => {image.handleImage(req, res, db)});
 
-app.post('/imageurl', (req, res) => {handleApiCall(req, res)});
+app.post('/imageurl', (req, res) => {image.handleApiCall(req, res)});
 
 app.listen(3000, ()=> {
     console.log('App is running on port 30000');
