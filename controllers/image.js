@@ -1,4 +1,5 @@
-const fetch = require('node-fetch');
+//const fetch = require('node-fetch');
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 // Setup Clarifai AI API Request
 const returnClarifaiJSONRequest = (imageUrl)=> {
